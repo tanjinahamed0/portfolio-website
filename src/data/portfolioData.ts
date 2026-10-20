@@ -14,7 +14,7 @@ export default function Developer() {
   );
 }`,
   socials: {
-    github: 'https://github.com',
+    github: 'https://github.com/tanjinahamed0',
     linkedin: 'https://linkedin.com',
     email: 'tanjin.ahamed@example.com',
   },
