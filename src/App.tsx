@@ -13,11 +13,11 @@ export const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('home');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Initialize theme from localStorage or default to dark (or light)
+  // Initialize theme from localStorage or default to light
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     const saved = localStorage.getItem('portfolio-theme');
     if (saved === 'dark' || saved === 'light') return saved;
-    return 'dark'; // Let's ensure dark mode is available and works flawlessly
+    return 'light';
   });
 
   // Apply theme class to both <html>, <body>, and document root reliably
