@@ -38,17 +38,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       <div className="relative w-full max-w-3xl rounded-3xl bg-white dark:bg-[#0d1322] border border-slate-200 dark:border-slate-700/80 shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]">
         
         {/* Header bar with traffic lights and close button */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#090d16]/90">
-          <div className="flex items-center space-x-2">
-            <span className="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
-            <span className="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
-            <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-            <span className="ml-3 text-xs font-mono text-slate-500 dark:text-slate-400">preview://{project.id}.app</span>
+        <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#090d16]/90">
+          <div className="flex items-center space-x-2 min-w-0">
+            <span className="w-3 h-3 rounded-full bg-rose-500 inline-block flex-shrink-0"></span>
+            <span className="w-3 h-3 rounded-full bg-amber-500 inline-block flex-shrink-0"></span>
+            <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block flex-shrink-0"></span>
+            <span className="ml-2 sm:ml-3 text-xs font-mono text-slate-500 dark:text-slate-400 truncate">preview://{project.id}.app</span>
           </div>
 
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors flex-shrink-0 ml-2"
             aria-label="Close modal"
           >
             <X size={18} />
@@ -56,7 +56,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Scrollable Body */}
-        <div className="overflow-y-auto p-6 sm:p-8 space-y-6">
+        <div className="overflow-y-auto p-4 sm:p-8 space-y-6">
           {/* Main Visual Preview */}
           <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950 shadow-md">
             <img
@@ -69,7 +69,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Title & Tagline */}
           <div className="space-y-2">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-wide">
                 {project.title}
               </h3>
               {project.details?.role && (
@@ -129,7 +129,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Modal Action Footer */}
-        <div className="px-6 sm:px-8 py-4 bg-slate-50 dark:bg-[#090d16] border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-end gap-3">
+        <div className="px-4 sm:px-8 py-4 bg-slate-50 dark:bg-[#090d16] border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-end gap-3">
           {project.githubUrl && (
             <a
               href={project.githubUrl}

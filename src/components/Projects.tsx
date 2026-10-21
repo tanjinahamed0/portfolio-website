@@ -9,9 +9,9 @@ interface ProjectsProps {
 
 export const Projects: React.FC<ProjectsProps> = ({ onOpenModal }) => {
   return (
-    <section id="projects" className="relative py-20 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="glow-orb-purple -left-20 top-1/2 w-96 h-96 opacity-25"></div>
+    <section id="projects" className="relative py-16 sm:py-20 overflow-hidden">
+      {/* Background ambient lighting — clamped within section */}
+      <div className="glow-orb-purple left-0 top-1/2 w-72 sm:w-96 h-72 sm:h-96 opacity-25 -translate-x-1/3"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

@@ -50,15 +50,15 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
           <div
-            className="flex items-center space-x-2.5 cursor-pointer"
+            className="flex items-center space-x-2 sm:space-x-2.5 cursor-pointer min-w-0 flex-shrink"
             onClick={() => handleClick('home')}
           >
             {/* Geometric accent prism wireframe */}
-            <div className="relative w-5 h-5 flex items-center justify-center">
+            <div className="relative w-5 h-5 flex-shrink-0 flex items-center justify-center">
               <span className="absolute inset-0 border border-sky-500 dark:border-cyan-400 rotate-45 transform"></span>
               <span className="w-1.5 h-1.5 bg-sky-500 dark:bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(14,165,233,0.8)] dark:shadow-[0_0_8px_#22d3ee]"></span>
             </div>
-            <span className="text-slate-900 dark:text-white text-lg font-bold tracking-wider hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">
+            <span className="text-slate-900 dark:text-white text-sm sm:text-lg font-bold tracking-wider hover:text-sky-600 dark:hover:text-cyan-400 transition-colors truncate">
               MD TANJIN AHAMED
             </span>
           </div>
@@ -139,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pt-4 pb-3 border-t border-slate-200 dark:border-slate-800/80 bg-white/95 dark:bg-[#0b0f19]/95 rounded-2xl p-4 backdrop-blur-xl shadow-2xl border border-slate-200 dark:border-slate-800">
+          <div className="md:hidden mt-4 bg-white/95 dark:bg-[#0b0f19]/95 rounded-2xl p-4 backdrop-blur-xl shadow-2xl border border-slate-200 dark:border-slate-800">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;

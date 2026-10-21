@@ -4,14 +4,14 @@ import { TechIcon } from './icons/TechIcon';
 
 export const Skills: React.FC = () => {
   return (
-    <section id="skills" className="relative py-20 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="glow-orb-cyan right-0 top-1/3 w-[400px] h-[400px] opacity-25"></div>
+    <section id="skills" className="relative py-16 sm:py-20 overflow-hidden">
+      {/* Background ambient lighting — clamped within section */}
+      <div className="glow-orb-cyan right-0 top-1/3 w-72 sm:w-[400px] h-72 sm:h-[400px] opacity-25 translate-x-1/3"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-14">
           <div className="inline-block relative">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-widest uppercase">
               SKILLS & EXPERTISE
@@ -28,7 +28,7 @@ export const Skills: React.FC = () => {
           {SKILL_CATEGORIES.map((category) => (
             <div
               key={category.title}
-              className="rounded-2xl bg-white dark:bg-[#0d1322] border border-slate-200/90 dark:border-slate-800/80 p-6 backdrop-blur-sm transition-all duration-300 shadow-xs hover:shadow-lg dark:shadow-none dark:hover:shadow-[0_8px_25px_-5px_rgba(0,242,254,0.18)] flex flex-col justify-between hover:border-sky-300 dark:hover:border-cyan-500/40"
+              className="rounded-2xl bg-white dark:bg-[#0d1322] border border-slate-200/90 dark:border-slate-800/80 p-4 sm:p-6 backdrop-blur-sm transition-all duration-300 shadow-xs hover:shadow-lg dark:shadow-none dark:hover:shadow-[0_8px_25px_-5px_rgba(0,242,254,0.18)] flex flex-col justify-between hover:border-sky-300 dark:hover:border-cyan-500/40"
             >
               {/* Category Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800/60 mb-5">

@@ -8,13 +8,13 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
-    <section id="home" className="relative min-h-[90vh] pt-32 pb-20 flex items-center overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="glow-orb-cyan top-16 -left-20 w-[450px] h-[450px] opacity-40"></div>
-      <div className="glow-orb-purple top-32 right-10 w-[550px] h-[550px] opacity-40"></div>
+    <section id="home" className="relative min-h-[90vh] pt-28 sm:pt-32 pb-16 sm:pb-20 flex items-center overflow-hidden">
+      {/* Background ambient lighting — stay within bounds */}
+      <div className="glow-orb-cyan top-16 left-0 w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] opacity-40 -translate-x-1/3"></div>
+      <div className="glow-orb-purple top-32 right-0 w-[350px] sm:w-[550px] h-[350px] sm:h-[550px] opacity-40 translate-x-1/4"></div>
       
       {/* Micro dot matrix decorations */}
-      <div className="absolute top-24 left-10 grid grid-cols-5 gap-2 opacity-30 pointer-events-none">
+      <div className="absolute top-24 left-4 sm:left-10 grid grid-cols-5 gap-2 opacity-30 pointer-events-none hidden sm:grid">
         {Array.from({ length: 25 }).map((_, i) => (
           <div key={i} className="w-1 h-1 bg-sky-500 dark:bg-cyan-400 rounded-full" />
         ))}
@@ -35,21 +35,21 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
               FULL-STACK WEB <br className="hidden sm:inline" />
               <span>DEVELOPER.</span>
             </h1>
 
             {/* Secondary subtitle in parentheses */}
-            <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 font-normal tracking-wide">
+            <p className="text-base sm:text-xl text-slate-600 dark:text-slate-300 font-normal tracking-wide">
               {PERSONAL_INFO.tagline}
             </p>
 
             {/* Action Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={() => onNavigate('projects')}
-                className="group relative inline-flex items-center justify-center px-7 py-3.5 rounded-xl text-white font-semibold dark:text-slate-950 dark:font-bold bg-gradient-to-r from-sky-500 via-cyan-500 to-purple-600 dark:from-[#00f2fe] dark:via-[#38bdf8] dark:to-[#9333ea] hover:opacity-95 shadow-[0_4px_20px_rgba(14,165,233,0.35)] dark:shadow-[0_0_25px_rgba(0,242,254,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+                className="group relative inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl text-white font-semibold dark:text-slate-950 dark:font-bold bg-gradient-to-r from-sky-500 via-cyan-500 to-purple-600 dark:from-[#00f2fe] dark:via-[#38bdf8] dark:to-[#9333ea] hover:opacity-95 shadow-[0_4px_20px_rgba(14,165,233,0.35)] dark:shadow-[0_0_25px_rgba(0,242,254,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-sm sm:text-base"
               >
                 <span>View Projects</span>
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
               <button
                 onClick={() => onNavigate('contact')}
-                className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-medium text-slate-800 bg-white border border-slate-300 hover:border-sky-500 hover:text-sky-600 shadow-xs dark:text-slate-200 dark:bg-slate-900/80 dark:border-slate-700/80 dark:hover:border-cyan-400 dark:hover:text-cyan-300 backdrop-blur-md transition-all duration-200 transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-medium text-slate-800 bg-white border border-slate-300 hover:border-sky-500 hover:text-sky-600 shadow-xs dark:text-slate-200 dark:bg-slate-900/80 dark:border-slate-700/80 dark:hover:border-cyan-400 dark:hover:text-cyan-300 backdrop-blur-md transition-all duration-200 transform hover:-translate-y-0.5 text-sm sm:text-base"
               >
                 <MessageSquareCode className="mr-2 w-4 h-4 text-sky-500 dark:text-cyan-400" />
                 <span>Get In Touch</span>
@@ -130,8 +130,8 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               </p>
             </div>
 
-            {/* Decorative dot matrix on right */}
-            <div className="absolute -bottom-6 -right-6 grid grid-cols-4 gap-2 opacity-25 pointer-events-none">
+            {/* Decorative dot matrix on right — hidden on mobile */}
+            <div className="absolute -bottom-6 -right-2 sm:-right-6 grid grid-cols-4 gap-2 opacity-25 pointer-events-none hidden sm:grid">
               {Array.from({ length: 16 }).map((_, i) => (
                 <div key={i} className="w-1.5 h-1.5 bg-purple-500 dark:bg-purple-400 rounded-full" />
               ))}

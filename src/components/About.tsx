@@ -15,13 +15,13 @@ export const About: React.FC = () => {
     <div className="rounded-2xl bg-white dark:bg-[#0d1322]/90 border border-slate-200/90 dark:border-slate-800/80 p-6 md:p-8 backdrop-blur-sm flex flex-col justify-between shadow-sm dark:shadow-xl">
       <div>
         {/* Title */}
-        <div className="flex items-center justify-between pb-3 mb-5 border-b border-slate-100 dark:border-slate-800/60">
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide uppercase">
+        <div className="flex items-center justify-between gap-3 pb-3 mb-5 border-b border-slate-100 dark:border-slate-800/60">
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide uppercase flex-shrink-0">
             ABOUT ME
           </h3>
-          <span className="text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center space-x-1.5">
-            <Terminal size={14} className="text-sky-500 dark:text-cyan-400" />
-            <span>developer.tsx</span>
+          <span className="text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center space-x-1.5 min-w-0 truncate">
+            <Terminal size={14} className="text-sky-500 dark:text-cyan-400 flex-shrink-0" />
+            <span className="truncate">developer.tsx</span>
           </span>
         </div>
 

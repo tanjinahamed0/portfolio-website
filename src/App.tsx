@@ -83,14 +83,14 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className={`min-h-screen bg-[#f8fafc] text-slate-800 dark:bg-[#080c14] dark:text-slate-100 flex flex-col relative selection:bg-cyan-500 selection:text-slate-950 font-sans transition-colors duration-300 ${theme === 'dark' ? 'dark' : ''}`}>
+    <div className={`min-h-screen bg-[#f8fafc] text-slate-800 dark:bg-[#080c14] dark:text-slate-100 flex flex-col relative selection:bg-cyan-500 selection:text-slate-950 font-sans transition-colors duration-300 overflow-x-hidden w-full max-w-[100vw] ${theme === 'dark' ? 'dark' : ''}`}>
       
       {/* Background Cyber Grid texture spanning the entire page */}
       <div className="fixed inset-0 bg-cyber-grid pointer-events-none z-0"></div>
 
-      {/* Floating ambient glow accents */}
-      <div className="fixed top-1/4 -right-40 w-96 h-96 glow-orb-purple pointer-events-none z-0"></div>
-      <div className="fixed bottom-1/4 -left-40 w-96 h-96 glow-orb-cyan pointer-events-none z-0"></div>
+      {/* Floating ambient glow accents — clipped to viewport */}
+      <div className="fixed top-1/4 right-0 w-72 sm:w-96 h-72 sm:h-96 glow-orb-purple pointer-events-none z-0 translate-x-1/3"></div>
+      <div className="fixed bottom-1/4 left-0 w-72 sm:w-96 h-72 sm:h-96 glow-orb-cyan pointer-events-none z-0 -translate-x-1/3"></div>
 
       {/* Navigation Header */}
       <Navbar
@@ -113,7 +113,7 @@ export const App: React.FC = () => {
         <Skills />
 
         {/* About Me & Contact Dual Section */}
-        <section id="about" className="relative py-20 overflow-hidden">
+        <section id="about" className="relative py-16 sm:py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
               {/* About Card with Live Code Snippet */}
