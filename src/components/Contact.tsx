@@ -12,21 +12,49 @@ export const Contact: React.FC = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
+    const form = e.currentTarget;
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setError(null);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+
+      let result: { success?: boolean; message?: string } = {};
+      try {
+        result = await response.json();
+      } catch {
+        // Non-JSON response; fall through to the generic error below.
+      }
+
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.message || 'Something went wrong. Please try again.');
+      }
+
       setSubmitted(true);
-    }, 600);
+    } catch (err) {
+      setError(
+        err instanceof Error && err.message
+          ? err.message
+          : 'Something went wrong. Please try again.'
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleReset = () => {
     setFormData({ name: '', email: '', message: '' });
     setSubmitted(false);
+    setError(null);
   };
 
   return (
@@ -43,7 +71,7 @@ export const Contact: React.FC = () => {
         {submitted ? (
           <div className="py-8 px-4 text-center rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-emerald-500/30 space-y-4">
             <CheckCircle2 className="w-12 h-12 text-emerald-500 dark:text-emerald-400 mx-auto" />
-            <h4 className="text-lg font-bold text-slate-900 dark:text-white">Message Dispatched!</h4>
+            <h4 className="text-lg font-bold text-slate-900 dark:text-white">Thanks, message sent!</h4>
             <p className="text-sm text-slate-600 dark:text-slate-300 max-w-sm mx-auto">
               Thank you, <span className="text-sky-600 dark:text-cyan-400 font-semibold">{formData.name}</span>. Your message has been received. I'll get back to you shortly.
             </p>
@@ -56,12 +84,20 @@ export const Contact: React.FC = () => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Web3Forms access key */}
+            <input
+              type="hidden"
+              name="access_key"
+              value="64fa5c18-ce90-4c90-9187-79e7c511b1a6"
+            />
+
             {/* Name Input */}
             <div>
               <label htmlFor="contact-name" className="sr-only">Name</label>
               <input
                 id="contact-name"
                 type="text"
+                name="name"
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -76,6 +112,7 @@ export const Contact: React.FC = () => {
               <input
                 id="contact-email"
                 type="email"
+                name="email"
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -90,6 +127,7 @@ export const Contact: React.FC = () => {
               <textarea
                 id="contact-message"
                 rows={4}
+                name="message"
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -97,6 +135,16 @@ export const Contact: React.FC = () => {
                 className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#070b14] border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-sky-500 dark:focus:border-cyan-400 focus:bg-white dark:focus:bg-[#070b14] focus:ring-1 focus:ring-sky-500 text-sm transition-all resize-none"
               ></textarea>
             </div>
+
+            {/* Error Message */}
+            {error && (
+              <p
+                role="alert"
+                className="px-4 py-3 rounded-xl text-sm font-medium bg-red-50 text-red-700 border border-red-200 dark:bg-red-500/10 dark:text-red-400 dark:border-red-500/30"
+              >
+                {error}
+              </p>
+            )}
 
             {/* Gradient Submit Button */}
             <button
