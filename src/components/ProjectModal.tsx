@@ -26,6 +26,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
   if (!project) return null;
 
+  const demoHost = (project.liveDemoUrl ?? '').replace(/^https?:\/\//, '').replace(/\/$/, '');
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 animate-fade-in">
       {/* Backdrop */}
@@ -43,7 +45,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <span className="w-3 h-3 rounded-full bg-rose-500 inline-block flex-shrink-0"></span>
             <span className="w-3 h-3 rounded-full bg-amber-500 inline-block flex-shrink-0"></span>
             <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block flex-shrink-0"></span>
-            <span className="ml-2 sm:ml-3 text-xs font-mono text-slate-500 dark:text-slate-400 truncate">preview://{project.id}.app</span>
+            <span className="ml-2 sm:ml-3 text-xs font-mono text-slate-500 dark:text-slate-400 truncate">{demoHost}</span>
           </div>
 
           <button
@@ -72,11 +74,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-wide">
                 {project.title}
               </h3>
-              {project.details?.role && (
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-sky-50 dark:bg-cyan-950/60 text-sky-700 dark:text-cyan-300 border border-sky-200 dark:border-cyan-800/40">
-                  {project.details.role}
-                </span>
-              )}
+              <span className="text-xs font-mono px-3 py-1 rounded-full bg-sky-50 dark:bg-cyan-950/60 text-sky-700 dark:text-cyan-300 border border-sky-200 dark:border-cyan-800/40">
+                {project.category}
+              </span>
             </div>
 
             <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
@@ -142,15 +142,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </a>
           )}
 
-          <button
-            onClick={() => {
-              alert(`Launching live simulation for: ${project.title}`);
-            }}
-            className="inline-flex items-center space-x-2 px-6 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-sky-500 to-purple-600 hover:opacity-90 shadow-md transition-all"
+          <a
+            href={project.liveDemoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center space-x-2 px-6 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-sky-500 to-purple-600 hover:opacity-90 hover:shadow-lg shadow-md transition-all"
           >
             <span>Launch Live Demo</span>
             <ExternalLink size={14} />
-          </button>
+          </a>
         </div>
 
       </div>

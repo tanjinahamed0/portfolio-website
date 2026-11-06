@@ -171,6 +171,29 @@ export const TechIcon: React.FC<TechIconProps> = ({ name, className = "w-6 h-6",
         </svg>
       );
 
+    case 'vite':
+      return (
+        <svg viewBox="0 0 32 32" width={size} height={size} className={className} fill="none">
+          <path d="M27 6.4h-6.5c-.5 0-1 .3-1.2.8L16 14.3l-3.3-7.1c-.2-.5-.7-.8-1.2-.8H5c-.7 0-1.1.7-.9 1.3l7.2 15.6c.2.5.7.8 1.2.8h4.9c.5 0 1-.3 1.2-.8l7.2-15.6c.3-.6-.2-1.3-.9-1.3Z" fill="#646CFF" />
+          <path d="M16 14.3l2.4 5.1c.1.3.5.3.6 0l2.6-5.1H16Z" fill="#FFD74A" />
+        </svg>
+      );
+
+    case 'vercel':
+      return (
+        <svg viewBox="0 0 32 32" width={size} height={size} className={className} fill="none">
+          <path d="M16 6.5 27 25.5H5Z" fill="currentColor" />
+        </svg>
+      );
+
+    case 'netlify':
+      return (
+        <svg viewBox="0 0 32 32" width={size} height={size} className={className} fill="none">
+          <path d="M17.3 4.6 22 9.3c.7.7.7 1.4 0 2.1l-1.6 1.6c-.3.3-.7.5-1 .5h-4.8c-.4 0-.8.2-1 .5L7 20.1c-.3.3-.5.6-.5 1v4.8c0 .4-.2.8-.5 1L4 28.5c-.6.1-1-.3-1-1V10.2c0-.4.2-.8.5-1l6.9-6.9c.6-.6 1.4-.6 2 0l4.9-1.7Z" fill="#20C6B6" />
+          <path d="M10.2 28.5 4.6 23c-.6-.6-.6-1.4 0-2l1.7-1.7c.3-.3.5-.7.5-1v-4.9c0-.4.2-.8.5-1l6.9-6.9c.3-.3.7-.5 1-.5h4.9c.4 0 .8-.2 1-.5L23 9c.6.6.6 1.4 0 2l-6.9 6.9c-.3.3-.5.7-.5 1v4.8c0 .4-.2.8-.5 1l-1.7 1.7c-.6.6-1.4.6-2 0Z" fill="#20C6B6" opacity=".75" />
+        </svg>
+      );
+
     default:
       return (
         <svg viewBox="0 0 32 32" width={size} height={size} className={className} fill="none">

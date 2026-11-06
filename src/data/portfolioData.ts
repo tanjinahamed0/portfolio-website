@@ -23,81 +23,94 @@ export default function Developer() {
 
 export const PROJECTS: Project[] = [
   {
-    id: 'ecommerce-platform',
-    title: 'ECOMMERCE PLATFORM',
-    techTags: ['React', 'Node.js', 'Stripe'],
-    description: 'Custom online store with payment integration',
-    image: '/assets/thumb-ecommerce.jpg',
-    liveDemoUrl: '#demo-ecommerce',
-    githubUrl: 'https://github.com/tanjinahamed/ecommerce-platform',
+    id: 'aura-fashion',
+    title: 'AURA FASHION',
+    category: 'Fashion & Brand Website',
+    techTags: ['HTML5', 'CSS3', 'JavaScript', 'Netlify'],
+    description: "A modern men's fashion brand website showcasing clothing collections with a premium shopping-inspired experience.",
+    image: '/assets/thumb-aura-fashion.jpg',
+    liveDemoUrl: 'https://aurafashionshop.netlify.app/',
+    featured: true,
     details: {
-      overview: 'A full-featured e-commerce storefront with Stripe checkout integration, real-time inventory management, and smooth cart drawer interactions.',
+      overview: "A modern men's fashion brand website showcasing clothing collections with a premium shopping-inspired experience. The Winter Collection 2026 site pairs a full-bleed editorial hero with a curated product catalogue and a warm, print-inspired palette.",
       features: [
-        'Secure multi-currency Stripe checkout session handling',
-        'Stateful cart store with instant local caching',
-        'Search & multi-facet category filters with instant response',
-        'Mobile-first responsive layout with fast SSR hydration'
-      ],
-      role: 'Lead Full-Stack Architect',
-      metrics: '300ms median interaction time & 99+ Lighthouse performance'
+        'Full-bleed seasonal hero with Playfair Display editorial typography',
+        'Local catalogue module drives the product grid, so adding a product needs no markup changes',
+        'New Arrivals, Winter Collection, About and Contact sections with smooth in-page navigation',
+        'Fluid clamp()-based layout, backdrop-blur surfaces and keyframed hero entrance'
+      ]
     }
   },
   {
-    id: 'portfolio-site',
-    title: 'PORTFOLIO SITE',
-    techTags: ['Vue.js', 'Tailwind CSS'],
-    description: 'This very website!',
-    image: '/assets/thumb-portfolio.jpg',
-    liveDemoUrl: '#demo-portfolio',
+    id: 'explore-bangladesh',
+    title: 'Explore Bangladesh',
+    category: 'Travel & Tourism',
+    techTags: ['React', 'Vite', 'JavaScript', 'Vercel'],
+    description: 'A travel and tourism website celebrating the beauty, destinations, and experiences of Bangladesh.',
+    image: '/assets/thumb-explore-bangladesh.jpg',
+    liveDemoUrl: 'https://explorebdweb.vercel.app/',
     details: {
-      overview: 'A sleek, cyberpunk-inspired developer portfolio designed to showcase modern interactive engineering with high aesthetic fidelity.',
+      overview: 'A travel and tourism website celebrating the beauty, destinations, and experiences of Bangladesh, built as a routed React single-page application with a calm green-and-gold identity.',
       features: [
-        'Dynamic cyber-grid layout with radial ambient glow meshes',
-        'Clean component modularity and responsive typography hierarchy',
-        'Accessible contact system with validation feedback',
-        'Optimized asset loading and smooth animated interactions'
-      ],
-      role: 'UI Designer & Frontend Engineer',
-      metrics: '100% responsive coverage across mobile, tablet, and desktop'
+        'Routed destinations, travel guides, trip planner and about views via React Router',
+        'Hero search for finding places across the destination catalogue',
+        'Editorial photo grid of beaches, hills, islands and tea gardens',
+        'Hand-written CSS design tokens with a DM Sans type scale'
+      ]
     }
   },
   {
-    id: 'task-manager',
-    title: 'TASK MANAGER',
-    techTags: ['MERN Stack'],
-    description: 'Project management app with real-time updates',
-    image: '/assets/thumb-taskmanager.jpg',
-    liveDemoUrl: '#demo-taskmanager',
-    githubUrl: 'https://github.com/tanjinahamed/task-manager-pro',
+    id: 'skymood-weather',
+    title: 'SkyMood Weather',
+    category: 'Weather Application',
+    techTags: ['JavaScript', 'HTML5', 'CSS3', 'Open-Meteo API'],
+    description: 'A modern weather application providing weather information through a clean and intuitive interface.',
+    image: '/assets/thumb-skymood-weather.jpg',
+    liveDemoUrl: 'https://skymoodweather.vercel.app/',
     details: {
-      overview: 'Collaborative task and sprint tracking application inspired by modern workspace tools, featuring live WebSocket synchronization.',
+      overview: 'A modern weather application providing weather information through a clean and intuitive interface — search any city for current conditions and a seven-day outlook over a soft gradient glass surface.',
       features: [
-        'Drag-and-drop Kanban board columns with optimistic UI updates',
-        'Real-time WebSocket event broadcasting for team collaboration',
-        'Role-based permissions (Viewer, Editor, Workspace Admin)',
-        'Detailed burndown charts and sprint productivity reporting'
-      ],
-      role: 'Full-Stack Developer',
-      metrics: 'Sub-50ms sync latency for concurrent collaborators'
+        'Live current conditions and 7-day forecast from the Open-Meteo API',
+        'City search plus one-click browser geolocation lookup',
+        '°C / °F unit toggle that recalculates the entire view',
+        'Staggered fade-up entrance animations across forecast cards'
+      ]
     }
   },
   {
-    id: 'work-manager',
-    title: 'WORK MANAGER',
-    techTags: ['MERN Stack'],
-    description: 'Project management app with real-time updates',
-    image: '/assets/thumb-workmanager.jpg',
-    liveDemoUrl: '#demo-workmanager',
+    id: 'easyplan',
+    title: 'EasyPlan',
+    category: 'Productivity & Task Management',
+    techTags: ['JavaScript', 'Tailwind CSS', 'HTML5', 'Vercel'],
+    description: 'A productivity application designed to help users organize tasks and manage their daily activities.',
+    image: '/assets/thumb-easyplan.jpg',
+    liveDemoUrl: 'https://easyplanweb.vercel.app/',
     details: {
-      overview: 'An agile development suite combining integrated code snippet tracking, automated backlog scoring, and live milestone delivery.',
+      overview: 'A productivity application designed to help users organize tasks and manage their daily activities, with a dashboard, priorities, due dates and lists that persist locally in the browser.',
       features: [
-        'Syntax-highlighted code snippet notebook with instant copy',
-        'Git commit timeline hooks and CI build status indicators',
-        'Milestone pacing calculation with automated delay alerts',
-        'Dark IDE-mode interface designed for long engineering sessions'
-      ],
-      role: 'Full-Stack Developer',
-      metrics: 'Over 12,000 active tickets handled in production benchmarks'
+        'Dashboard counters for total, completed, in-progress and overdue tasks',
+        'Priority, category and status filters with instant text search',
+        'Personal / Work / Study lists plus a daily completion progress ring',
+        'localStorage persistence so plans survive a reload — no account needed'
+      ]
+    }
+  },
+  {
+    id: 'expenseflow',
+    title: 'ExpenseFlow',
+    category: 'Finance & Expense Management',
+    techTags: ['React', 'Vite', 'Recharts', 'Vercel'],
+    description: 'A personal expense management application for tracking and organizing expenses.',
+    image: '/assets/thumb-expenseflow.jpg',
+    liveDemoUrl: 'https://expenseflowweb.vercel.app/',
+    details: {
+      overview: 'A personal expense management application for tracking and organizing expenses, centred on an analytics dashboard with income and expense trends, budgets and category breakdowns.',
+      features: [
+        'Income vs expense trends and spending breakdown charts built with Recharts',
+        'Balance, income, expense and savings-rate cards with month-on-month deltas',
+        'Budget progress bars that flag overspend per category',
+        'Transaction table with search, category filter and month selector'
+      ]
     }
   }
 ];

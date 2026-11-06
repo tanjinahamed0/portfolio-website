@@ -24,11 +24,11 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenModal }) => {
             <div className="w-16 h-0.5 bg-gradient-to-r from-sky-500 to-purple-500 dark:from-cyan-400 dark:to-purple-500 mx-auto mt-2 rounded-full"></div>
           </div>
           <p className="mt-3 text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
-            A selection of recent applications spanning full-stack architectures, real-time data synchronization, and interactive interfaces.
+            Five live, deployed applications spanning brand experiences, travel, weather, productivity and personal finance.
           </p>
         </div>
 
-        {/* 4-Card Responsive Grid */}
+        {/* Featured project spans the full row; the remaining four fill the grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {PROJECTS.map((project) => (
             <ProjectCard

@@ -19,12 +19,13 @@ A modern, high-fidelity developer portfolio web application built with **React, 
    - Floating dark IDE code preview window.
 
 3. **Projects Grid**:
-   - 4-card responsive layout featuring authentic project screenshots extracted from design assets:
-     - **ECOMMERCE PLATFORM**: React, Node.js, Stripe
-     - **PORTFOLIO SITE**: Vue.js, Tailwind CSS
-     - **TASK MANAGER**: MERN Stack
-     - **WORK MANAGER**: MERN Stack
-   - Interactive `[Live Demo]` modal with deep architecture highlights, tech badges, and source links.
+   - Featured first project spanning the full row, then a 4-card responsive grid — every thumbnail is a real screenshot of the deployed site:
+     - **AURA FASHION** (featured): HTML5, CSS3, JavaScript, Netlify
+     - **Explore Bangladesh**: React, Vite, JavaScript, Vercel
+     - **SkyMood Weather**: JavaScript, HTML5, CSS3, Open-Meteo API
+     - **EasyPlan**: JavaScript, Tailwind CSS, HTML5, Vercel
+     - **ExpenseFlow**: React, Vite, Recharts, Vercel
+   - `[Live Demo]` links open each deployed site in a new tab; the Quick Preview modal adds category, tech badges and engineering highlights.
 
 4. **Skills & Expertise**:
    - Categorized cards for **Frontend**, **Backend**, **Databases**, **Cloud & Infrastructure**, and **Tools**.
